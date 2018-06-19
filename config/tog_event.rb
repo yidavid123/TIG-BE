@@ -1,0 +1,2 @@
+class TogEvent < ApplicationRecord
+end

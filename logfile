@@ -1,0 +1,35 @@
+2018-05-21 12:42:36.302 PDT [8096] LOG:  listening on IPv6 address "::1", port 5432
+2018-05-21 12:42:36.302 PDT [8096] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-05-21 12:42:36.303 PDT [8096] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-05-21 12:42:36.341 PDT [8098] LOG:  database system was interrupted; last known up at 2018-05-16 20:49:15 PDT
+2018-05-21 12:42:36.569 PDT [8098] LOG:  invalid record length at 0/1857F30: wanted 24, got 0
+2018-05-21 12:42:36.569 PDT [8098] LOG:  invalid primary checkpoint record
+2018-05-21 12:42:36.569 PDT [8098] LOG:  using previous checkpoint record at 0/1857720
+2018-05-21 12:42:36.571 PDT [8098] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-05-21 12:42:36.579 PDT [8098] LOG:  redo starts at 0/18576E8
+2018-05-21 12:42:36.579 PDT [8098] LOG:  invalid record length at 0/18577C8: wanted 24, got 0
+2018-05-21 12:42:36.579 PDT [8098] LOG:  redo done at 0/1857790
+2018-05-21 12:42:36.597 PDT [8096] LOG:  database system is ready to accept connections
+2018-05-21 12:44:16.432 PDT [8132] ERROR:  database "apartments_development" already exists
+2018-05-21 12:44:16.432 PDT [8132] STATEMENT:  CREATE DATABASE "apartments_development" ENCODING = 'unicode'
+2018-05-21 12:44:16.452 PDT [8133] ERROR:  database "apartments_test" already exists
+2018-05-21 12:44:16.452 PDT [8133] STATEMENT:  CREATE DATABASE "apartments_test" ENCODING = 'unicode'
+2018-05-22 11:04:37.076 PDT [15171] ERROR:  database "apartments_development" already exists
+2018-05-22 11:04:37.076 PDT [15171] STATEMENT:  CREATE DATABASE "apartments_development" ENCODING = 'unicode'
+2018-05-22 11:04:37.087 PDT [15172] ERROR:  database "apartments_test" already exists
+2018-05-22 11:04:37.087 PDT [15172] STATEMENT:  CREATE DATABASE "apartments_test" ENCODING = 'unicode'
+2018-05-23 11:22:37.974 PDT [20255] ERROR:  relation "roles" does not exist at character 566
+2018-05-23 11:22:37.974 PDT [20255] STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+	                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+	                FROM pg_attribute a
+	                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	                LEFT JOIN pg_type t ON a.atttypid = t.oid
+	                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+	               WHERE a.attrelid = '"roles"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+2018-05-29 16:32:10.988 PDT [49842] FATAL:  database "my_database_development" does not exist
+2018-05-29 16:33:48.308 PDT [49874] ERROR:  database "my_database_development" already exists
+2018-05-29 16:33:48.308 PDT [49874] STATEMENT:  CREATE DATABASE "my_database_development" ENCODING = 'utf8'
